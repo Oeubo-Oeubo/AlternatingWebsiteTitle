@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alternating Title Project</title>
+
+    <script>
+      const title = document.title;
+      const newTitle = [
+        // keep in mind of character length as a long title will be cut off
+        "Line One",
+        "Line Two",
+        "Line Three",
+        "Line Four",
+        "Line Five",
+      ];
+
+      var intervalTime = null; // null will stop the interval
+      var i = -1; // -1 will start at the first string of the array
+      var speed = 4000; // 4 seconds
+
+      window.addEventListener("blur", function () {
+        // When the window is blurred (you are not actively on and have clicked off screen)
+        intervalTime = setInterval(function () {
+          if (i < newTitle.length - 1) {
+            i++;
+          } else {
+            i = 0;
+          }
+          document.title = newTitle[i]; // This replace the title with which number of the array it is on
+        }, speed);
+      });
+
+      window.addEventListener("focus", function () {
+        // When the window is focused (you are actively on)
+        clearInterval(intervalTime);
+        document.title = title; // Changes back to original title
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
