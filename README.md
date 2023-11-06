@@ -1,4 +1,4 @@
-# How To Change Your Website Title With An Animated Array
+# How To Change Your Website Title With An Animated Array & Window onBlur/onFocus Functions
 
 Here is a simple vanilla JavaScript function that will change the original title of the website into different strings within an array. These strings will appear in order and only when you click off of the website.
 
